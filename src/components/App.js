@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './real-estate-logo.jpg';
-import './App.css';
 
 import Header from './Header';
 import Main from './Main';

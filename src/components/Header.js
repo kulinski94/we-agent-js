@@ -8,9 +8,8 @@ export default class Footer extends React.Component {
 			<div className="Header">
 
 				<div className="Header-header">
-
-        <img src={logo} className="Header-logo" alt="logo" />
-        <h2>Welcome to Wise Estate Agent</h2>
+          <img src={logo} className="Header-logo" alt="logo" />
+          <h2>Welcome to Wise Estate Agent</h2>
 				</div>
 
 			</div>
