@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-list": "^0.8.6",
     "react-scroll": "^1.5.2"
   },
   "devDependencies": {
