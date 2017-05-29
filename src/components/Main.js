@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import ReactList from 'react-list';
 import Scroll from 'react-scroll';
+import axios from 'axios';
 import './Main.css';
+import Estate from './Estate.js';
 
 var Element = Scroll.Element;
 var Events = Scroll.Events;
@@ -21,22 +23,6 @@ class Main extends Component {
 
   componentWillMount() {
 
-    var estates = [
-      {
-        id: 'estate1',
-        name: "RaliCastle1"
-      }, {
-        id: 'estate2',
-        name: "RaliCastle2"
-      }, {
-        id: 'estate3',
-        name: "RaliCastle3"
-      }, {
-        id: 'estate4',
-        name: "RaliCastle3"
-      }
-    ];
-    this.handleEstates(estates);
   }
 
   handleEstates(estates) {
@@ -44,12 +30,19 @@ class Main extends Component {
   }
 
   renderItem(index, key) {
-    return <Element key={this.state.estates[index].id} className="element">{this.state.estates[index].name}
+    return <Element key={this.state.estates[index].id} className="element">
+      {this.state.estates[index].name}
+      <Estate />
     </Element>;
   }
 
   componentDidMount() {
     scrollSpy.update();
+    axios.get(`http://localhost:8080`)
+      .then(res => {
+        const estates = res.data;
+        this.setState({ estates });
+      });
 
   }
   scrollToTop() {
