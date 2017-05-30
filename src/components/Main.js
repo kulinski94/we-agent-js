@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactList from 'react-list';
 import Scroll from 'react-scroll';
 import axios from 'axios';
+import Button from 'react-button'
 import './Main.css';
 import Estate from './Estate.js';
 
@@ -31,8 +32,7 @@ class Main extends Component {
 
   renderItem(index, key) {
     return <Element key={this.state.estates[index].id} className="element">
-      {this.state.estates[index].name}
-      <Estate />
+      <Estate estate={this.state.estates[index]}/>
     </Element>;
   }
 
@@ -58,8 +58,7 @@ class Main extends Component {
       <div>
 
         <ReactList itemRenderer={this.renderItem.bind(this)} length={this.state.estates.length} type='uniform'/>
-
-        <a onClick={this.scrollToTop}>To the top!</a>
+        <Button className='Main-scrollbutton' onClick={this.scrollToTop}>To top</Button>
 
       </div>
     );
