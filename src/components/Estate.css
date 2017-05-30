@@ -13,3 +13,9 @@
   height: 100px;
   font-size: 20px;
 }
+
+.Estate-image {
+    height: 400px;
+    width: 50%;
+    background-color: powderblue;
+}
