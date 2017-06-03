@@ -7,6 +7,7 @@ import Main from './components/Main';
 import Estates from './components/Estates';
 import Footer from './components/Footer';
 import About from './components/About';
+import Login from './components/Login';
 import './index.css';
 
 ReactDOM.render((
@@ -16,6 +17,7 @@ ReactDOM.render((
       <Route exact path="/" component={Main}/>
       <Route path="/about" component={About}/>
       <Route path="/estates" component={Estates}/>
+      <Route path="/login" component={Login}/>
       <Footer/>
     </div>
   </BrowserRouter>
