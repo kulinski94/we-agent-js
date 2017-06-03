@@ -4,6 +4,7 @@ import {BrowserRouter, Route} from 'react-router-dom'
 
 import Header from './components/Header';
 import Main from './components/Main';
+import Estates from './components/Estates';
 import Footer from './components/Footer';
 import About from './components/About';
 import './index.css';
@@ -14,6 +15,7 @@ ReactDOM.render((
       <Header/>
       <Route exact path="/" component={Main}/>
       <Route path="/about" component={About}/>
+      <Route path="/estates" component={Estates}/>
       <Footer/>
     </div>
   </BrowserRouter>
