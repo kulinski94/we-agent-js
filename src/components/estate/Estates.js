@@ -22,9 +22,7 @@ class Main extends Component {
     this.scrollToTop = this.scrollToTop.bind(this);
   }
 
-  componentWillMount() {
-
-  }
+  componentWillMount() {}
 
   handleEstates(estates) {
     this.setState({estates});
@@ -38,11 +36,14 @@ class Main extends Component {
 
   componentDidMount() {
     scrollSpy.update();
-    axios.get(`http://localhost:8080`)
-      .then(res => {
-        const estates = res.data;
-        this.setState({ estates });
-      });
+    axios.get(`http://localhost:8080/api/estates`, {
+      headers: {
+        'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
+      }
+    }).then(res => {
+      const estates = res.data;
+      this.setState({estates});
+    });
 
   }
   scrollToTop() {
